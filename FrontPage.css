@@ -1,0 +1,58 @@
+/* App.css */
+.app-container {
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .app-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .background-image {
+    background-image: url('https://www.gauri.com/wp-content/uploads/Business-Intelligence-and-Analytics-1080x675.jpeg'); /* Replace with the correct URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .button-container {
+    margin-top: 50px; /* Adjust the margin-top to move the buttons vertically */
+  }
+  
+  .app-animated-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: app-pulse 2s infinite;
+  }
+  
+  @keyframes app-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

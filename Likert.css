@@ -1,0 +1,160 @@
+
+.container-likert-scale {
+  text-align: center;
+  margin: 20px;
+  background-image: url("https://img.freepik.com/premium-photo/abstract-background-light-blue-shades-with-glare-bokeh-effect_494741-80236.jpg?w=2000");
+  background-repeat: no-repeat;
+  background-size:cover; /* Set the background image to cover the container */
+  background-position: center;
+  margin-bottom: -60px;
+  padding-bottom: 700px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 20px;
+}
+
+.container-likert-scale h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.container-likert-scale .contentLikert {
+  margin-bottom: 20px;
+}
+
+.container-likert-scale .contentLikert h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.container-likert-scale .contentLikert input[type="text"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.container-likert-scale .contentLikert button {
+  background-color: #0faab5;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.container-likert-scale .contentLikert button:hover {
+  background-color: #ec47de;
+}
+
+.container-likert-scale .question {
+  margin-bottom: 10px;
+}
+
+.container-likert-scale .question p {
+  margin-bottom: 5px;
+}
+
+.container-likert-scale .question ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.container-likert-scale .question ul li {
+  margin-bottom: 5px;
+}
+
+.container-likert-scale .question ul li label {
+  display: flex;
+  align-items: center;
+}
+
+.container-likert-scale .question ul li label input[type="checkbox"] {
+  margin-right: 5px;
+}
+.container-likert-scale .question {
+  margin-bottom: 10px;
+  text-align: center; /* Add this line to center the question content */
+}
+
+.container-likert-scale .question p {
+  margin-bottom: 5px;
+}
+
+.container-likert-scale .question ul {
+  list-style-type: none;
+  padding: 0;
+  display: inline-block; /* Add this line to center the list */
+}
+
+.container-likert-scale .question ul li {
+  margin-bottom: 5px;
+}
+
+.container-likert-scale .question ul li label {
+  display: flex;
+  align-items: center;
+}
+
+.container-likert-scale .question ul li label input[type="checkbox"] {
+  margin-right: 5px;
+}
+/* Likert.css */
+.container-likert-scale {
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #0faab5;;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: #ec47de;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
+.home 
+{
+  margin-top: -80px;
+  margin-left: -1300px;
+}
