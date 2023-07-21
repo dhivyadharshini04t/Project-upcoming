@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Radio.css';
+import axios from 'axios';
 
 function AdminInterface() {
   const [questions, setQuestions] = useState([]);
@@ -17,9 +18,11 @@ function AdminInterface() {
   };
 
   const handleAddOption = () => {
-    if (currentOption !== '') {
+    if (currentOption !== '' && options.length < 4) {
       setOptions([...options, currentOption]);
       setCurrentOption('');
+    } else if (options.length >= 4) {
+      window.alert('Maximum 4 options allowed.');
     }
   };
 
@@ -30,11 +33,18 @@ function AdminInterface() {
         options: options,
         selectedOption: ''
       };
+      
       setQuestions([...questions, newQuestion]);
       setCurrentQuestion('');
       setOptions([]);
       setCurrentOption('');
+    } else {
+      window.alert('A question must have at least 2 options.');
     }
+    const Question={
+        question:questions
+      }
+      axios.post('http://127.0.0.1:8080/adDetails', Question);
   };
 
   const handleOptionSelect = (questionIndex, optionIndex) => {
@@ -44,16 +54,20 @@ function AdminInterface() {
   };
 
   const handleSurveySubmit = () => {
-    // In a real application, you should send the survey data to the server for processing
+    
     console.log('Survey submitted:', questions);
-    // Clear the questions and options after submission (optional)
+  
     setQuestions([]);
   };
 
   return (
     <div className="container-admin-interface">
-      <div className='home'><Link to="/Button">Home</Link></div>
-      <h1>RADIO SURVEY</h1>
+      <div className="home">
+        <Link to="/Button">Home</Link>
+      </div>
+      <div className="header">
+        <h1>RADIO SURVEY</h1>
+      </div>
 
       <div className="content">
         <h2>Create a Question</h2>
@@ -105,7 +119,7 @@ function AdminInterface() {
                       checked={option === question.selectedOption}
                       onChange={() => handleOptionSelect(index, optionIndex)}
                     />
-                    {option}
+                    {option === 'null' ? '---' : option}
                   </li>
                 ))}
               </ul>
@@ -113,9 +127,9 @@ function AdminInterface() {
           ))}
         </ul>
       </div>
-
-      <button onClick={handleSurveySubmit}>Submit</button>
-
+      <Link to="./End">
+        <button onClick={handleSurveySubmit}>Submit</button>
+      </Link>
     </div>
   );
 }

@@ -1,0 +1,41 @@
+/* ButtonMainComment.css */
+.buttonMainerLikert-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR23b1chzgcdPb8g9II-oJJEdW6txpv8AuvJ0r5uKZAeKEdkYxhv_m50zUxkeWpwxX0yp4&usqp=CAU"); /* Replace with the path to your background image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .buttonram,
+  .buttonram1,
+  .buttonram2,
+  .buttonram3 {
+    background-color: #07eeff;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s;
+  }
+  
+  .post-comment-btn:hover {
+    background-color: #ec47de;
+  }
+  
+  .get-comment-btn:hover {
+    background-color: #ec47de;
+  }
+  
+  .update-comment-btn:hover {
+    background-color: #ec47de;
+  }
+  
+  .delete-comment-btn:hover {
+    background-color: #ec47de;
+  }
+  

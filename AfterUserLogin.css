@@ -1,0 +1,38 @@
+.code-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: url("https://img.freepik.com/premium-photo/abstract-background-light-blue-shades-with-glare-bokeh-effect_494741-80236.jpg?w=2000");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* To make sure the background covers the entire viewport */
+  }
+  
+  .code-input {
+    width: 400px;
+    height: 100px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    outline: none; /* Remove the default focus outline */
+  }
+  
+  .enter-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0faab5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Add styles for the "Enter" button when focused or hovered */
+  .enter-button:focus,
+  .enter-button:hover {
+    background-color: #ec47de;
+    outline: none; /* Remove the default focus outline */
+  }
+  

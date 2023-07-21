@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './UserLogin.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -30,23 +31,29 @@ function App() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data={
+      email:email,
+      password:password
+    }
+    
+    axios.post('http://127.0.0.1:8080/addDetails', data);
+    
     if (!isValidEmail(email)) {
       setEmailError('Please enter a valid email address.');
       return;
     }
-
+    
     if (password.length > 0 && password.length < 6) {
       setPasswordError('Password must be at least 6 characters long.');
       return;
     }
-
+    
     // Rest of the validation and login logic...
     alert('Login successful!');
   };
-
+  
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -85,27 +92,15 @@ function App() {
             <span className="show">SHOW</span>
           </div>
           {passwordError && <div className="error-msg red">{passwordError}</div>}
-          <div className="pass">
-            <a href="#">Forgot Password?</a>
-          </div>
+          
           <div className="field">
-            <Link to="./Home">
+            <Link to="./AfterUserLogin">
               <input type="submit" value="LOGIN" disabled={!isLoginEnabled} />
             </Link>
           </div>
         </form>
         <div className="login">Or login with</div>
         <div className="links">
-          <div className="facebook">
-            <i className="fab fa-facebook-f">
-              <span>Facebook</span>
-            </i>
-          </div>
-          <div className="instagram">
-            <i className="fab fa-instagram">
-              <span>Instagram</span>
-            </i>
-          </div>
         </div>
         <div className="signup">
           Don't have an account?
@@ -117,5 +112,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

@@ -17,7 +17,7 @@
   }
   
   .background-image {
-    background-image: url('https://www.gauri.com/wp-content/uploads/Business-Intelligence-and-Analytics-1080x675.jpeg'); /* Replace with the correct URL */
+    background-image: url('https://www.cloudresearch.com/wp-content/uploads/2023/03/blog_april-fools_hero_iStock-1453979894-scaled.jpg'); /* Replace with the correct URL */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -26,22 +26,27 @@
     left: 0;
     right: 0;
     bottom: 0;
+  
   }
   
   .button-container {
-    margin-top: 50px; /* Adjust the margin-top to move the buttons vertically */
+    margin-top: 50px; 
+ 
+    padding-right: 500px;
+    margin-right: 500px;/* Adjust the margin-top to move the buttons vertically */
   }
   
   .app-animated-button {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #1971d0;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     animation: app-pulse 2s infinite;
+  
   }
   
   @keyframes app-pulse {

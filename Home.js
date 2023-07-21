@@ -27,9 +27,9 @@ const Home = () => {
             <li>
               <div className="dropdown">
                 <div className="dropdown-content">
-                  <Link to="/templates">Templates</Link>
+                  <Link to="/Button">Templates</Link>
                   <Link to="/ratings">Ratings</Link>
-                  <Link to="/responses">Responses</Link>
+                  <Link to="/Responses">Responses</Link>
                   <Link to="/reports">Reports</Link>
                 </div>
               </div>
@@ -39,6 +39,9 @@ const Home = () => {
             </li>
             <li>
               <Link to="/FrontPage">Log out</Link>
+            </li>
+            <li>
+              <Link to="/FrontPage">Profile</Link>
             </li>
           </ul>
         </div>

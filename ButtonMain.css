@@ -1,0 +1,46 @@
+/* ButtonMain.css */
+.buttonMainer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR23b1chzgcdPb8g9II-oJJEdW6txpv8AuvJ0r5uKZAeKEdkYxhv_m50zUxkeWpwxX0yp4&usqp=CAU");
+  background-size: cover;
+  background-position: center;
+}
+
+.buttondd,
+.buttondd1,
+.buttondd2,
+.buttondd3 {
+  background-color: #07eeff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.buttondd1 {
+  background-color: #07eeff;
+}
+
+.buttondd2 {
+  background-color: #07eeff;
+  color: #212529;
+}
+
+.buttondd3 {
+  background-color:#07eeff;
+}
+
+/* Animated Button Styles */
+.buttondd:hover,
+.buttondd1:hover,
+.buttondd2:hover,
+.buttondd3:hover {
+  background-color:#ec47de;
+}

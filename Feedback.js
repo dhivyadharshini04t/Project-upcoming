@@ -1,119 +1,166 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Feedback.css';
+import { Link } from 'react-router-dom';
 
 const FeedbackForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    age: '',
+    survey: '',
+    hearaboutus: '',
+    ratings: '',
+    comment: '',
+  });
+
+  const { name, email, age, survey, hearaboutus, ratings, comment } = formData;
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const isFormValid = () => {
+    return name && email && age && survey && hearaboutus && ratings && comment;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (isFormValid()) {
+      // Submit the form data
+      console.log("Form submitted successfully!");
+    } else {
+      console.error("Please fill in all the fields.");
+    }
+  };
+
   return (
     <div className="Stef">
       <div className="feedbackFormContainer">
         <h1 className="formTitle">SURVEY FEEDBACK FORM</h1>
-        <form id="form">
-          
+        <form id="form" onSubmit={handleSubmit}>
           <div className="formField">
             <label htmlFor="name" className="label-name">
               Name
             </label>
-            <input type="text" id="name" className="input-name" placeholder="Enter your name" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className="input-name"
+              placeholder="Enter your name"
+              value={name}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="formField">
             <label htmlFor="email" className="label-email">
               Email
             </label>
-            <input type="email" id="email" className="input-email" placeholder="Enter your email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="input-email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="formField">
             <label htmlFor="age" className="label-age">
               Age
             </label>
-            <input type="text" id="age" className="input-age" placeholder="Enter your age" />
+            <input
+              type="text"
+              id="age"
+              name="age"
+              className="input-age"
+              placeholder="Enter your age"
+              value={age}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="formField">
-            <label htmlFor="role" className="label-role">
-              Which option best describes you?
+            <label htmlFor="survey" className="label-age">
+              Would You Like this Survey?
             </label>
-            <select name="role" id="role" className="select-role">
-              <option value="student">Student</option>
-              <option value="intern">Intern</option>
-              <option value="professional">Professional</option>
-              <option value="other">Other</option>
-            </select>
+            <input
+              type="text"
+              id="survey"
+              name="survey"
+              className="input-age"
+              placeholder="Yes or No"
+              value={survey}
+              onChange={handleChange}
+            />
           </div>
+
           <div className="formField">
-            <label>
-              Would you recommend Us to a friend?
+            <label htmlFor="hearaboutus" className="label-age">
+              Where did you first hear about us?
             </label>
-            <label htmlFor="recommend-1" className="recommend-label">
-              <input
-                type="radio"
-                id="recommend-1"
-                name="recommend"
-                className="recommend-input"
-              />
-              Yes
-            </label>
-            <label htmlFor="recommend-2" className="recommend-label">
-              <input
-                type="radio"
-                id="recommend-2"
-                name="recommend"
-                className="recommend-input"
-              />
-              No
-            </label>
-            <label htmlFor="recommend-3" className="recommend-label">
-              <input
-                type="radio"
-                id="recommend-3"
-                name="recommend"
-                className="recommend-input"
-              />
-              Maybe
-            </label>
+            <input
+              type="text"
+              id="hearaboutus"
+              name="hearaboutus"
+              className="input-age"
+              placeholder="Enter your answer"
+              value={hearaboutus}
+              onChange={handleChange}
+            />
           </div>
+
           <div className="formField">
-            <label>
-              How many rating you are giving to us?
-              <small>(Check all that apply)</small>
+            <label htmlFor="ratings" className="label-age">
+              How many ratings are you giving to us?
             </label>
-            <label htmlFor="inp-1" className="rating-label">
-              <input type="checkbox" name="inp" className="rating-input" />
-              *
-            </label>
-            <label htmlFor="inp-2" className="rating-label">
-              <input type="checkbox" name="inp" className="rating-input" />
-              **
-            </label>
-            <label htmlFor="inp-3" className="rating-label">
-              <input type="checkbox" name="inp" className="rating-input" />
-              ***
-            </label>
-            <label htmlFor="inp-4" className="rating-label">
-              <input type="checkbox" name="inp" className="rating-input" />
-              ****
-            </label>
-            <label htmlFor="inp-5" className="rating-label">
-              <input type="checkbox" name="inp" className="rating-input" />
-              *****
-            </label>
+            <input
+              type="text"
+              id="ratings"
+              name="ratings"
+              className="input-age"
+              placeholder="*****"
+              value={ratings}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="formField">
             <label htmlFor="comment">
-              Any comments or suggestions
+              Any comments or suggestions for our survey app?
             </label>
             <textarea
               name="comment"
               id="comment"
               className="input-comment"
               placeholder="Enter your comment here"
+              value={comment}
+              onChange={handleChange}
             ></textarea>
           </div>
 
-          <button type="submit" className="submitButton" value="submit">
-            Submit
-          </button>
+          {(!isFormValid() && (
+            <div className="error-message">
+              Please fill in all the fields.
+            </div>
+          ))}
+
+          <div className="submitButton-container">
+            <Link to="./End">
+              <button
+                type="submit"
+                className="submitButton"
+                value="submit"
+                disabled={!isFormValid()}
+              >
+                Submit
+              </button>
+            </Link>
+          </div>
         </form>
       </div>
     </div>

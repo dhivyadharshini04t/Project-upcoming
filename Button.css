@@ -82,3 +82,35 @@
 .home-button:hover {
   background-color: #ec47de;
 }
+
+.button-container button:hover {
+  background-color: #ec47de;
+}
+.sofia{
+  background-color: #0faab5;
+}
+.sofia:hover {
+
+  background-color: #ec47de;
+}
+.sofia1{
+  background-color: #0faab5;
+}
+.sofia1:hover {
+
+  background-color: #ec47de;
+}
+.sofia2{
+  background-color: #0faab5;
+}
+.sofia2:hover {
+
+  background-color: #ec47de;
+}
+.sofia3{
+  background-color: #0faab5;
+}
+.sofia3:hover {
+
+  background-color: #ec47de;
+}
